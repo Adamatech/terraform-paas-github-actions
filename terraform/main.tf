@@ -13,13 +13,13 @@ module "appservice"{
 
     app_service_plan_name = "dev-app"
     app_service_plan_location = "westeurope"
-    app_service_plan_rg = "example-resources"
+    app_service_plan_rg = "rg-ada-alz-01"
     app_service_plan_tiers = "Standard"
     app_service_plan_sku = "S1"
 
     app_service_name = "devwebapp"
     app_service_location = "westeurope"
-    app_service_rg = "example-resources"
+    app_service_rg = "rg-ada-alz-01"
     app_service_tag_env = "dev"
 
     depends_on = [azurerm_resource_group.example]
@@ -30,19 +30,19 @@ module "postgre"{
 
     postgre_name = "postgre2021"
     postgre_location = "westeurope"
-    postgre_rg = "example-resources"
+    postgre_rg = "rg-ada-alz-01"
     postgre_administrator_login = var.administrator_login
     postgre_administrator_login_password = var.administrator_login_password
     postgre_sku_name = "GP_Gen5_4"
     postgre_version = "9.6"
     postgre_storage_mb = "640000"
 
-    depends_on = [azurerm_resource_group.example]
+    depends_on = [azurerm_resource_group.rg]
 }
 
 # Create a resource group
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+resource "azurerm_resource_group" "rg" {
+  name     = "rg-ada-alz-01"
   location = "West Europe"
 }
 
