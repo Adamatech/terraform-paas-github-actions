@@ -1,4 +1,4 @@
-name: Terraform sample workflow
+name: Terraform-PaaS
 
 on: workflow_dispatch
 
@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      ARM_CLIENT_ID: ${{secrets.TF_ARM_CLIENT_ID}}
-      ARM_CLIENT_SECRET: ${{secrets.TF_ARM_CLIENT_SECRET}}
-      ARM_SUBSCRIPTION_ID: ${{secrets.AZ_SUBID}}
-      ARM_TENANT_ID: ${{secrets.AZ_TENANTID}}
+      TF_DEPLOY_CLIENT_ID: ${{secrets.TF_DEPLOY_CLIENT_ID}}
+      TF_DEPLOY_CLIENT_SECRET: ${{secrets.TF_DEPLOY_CLIENT_SECRET}}
+      TF_DEPLOY_SUBSCRIPTION_ID: ${{secrets.TF_DEPLOY_SUBID}}
+      TF_DEPLOY_TENANT_ID: ${{secrets.TF_DEPLOY_TENANTID}}
       TF_VAR_administrator_login: ${{secrets.TF_VAR_administrator_login}}
       TF_VAR_administrator_login_password: ${{secrets.TF_VAR_administrator_login_password}}
 
