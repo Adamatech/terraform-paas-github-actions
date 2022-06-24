@@ -25,14 +25,10 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         
       - name: List directory
-        run: ls -a
-        
+        run: ls -a    
+
       - name: Terraform Init
         run: terraform init
-         with: # Set Azure credentials secret as an input
-          credentials: ${{ secrets.SP_ADAMATECH_GITHUB_ACTION_AZURE }}
-         env: # Or as an environment variable
-          credentials: ${{ secrets.SP_ADAMATECH_GITHUB_ACTION_AZURE }}
 
       - name: Terraform Plan
         run: terraform plan
