@@ -23,7 +23,7 @@ jobs:
       
       - uses: azure/login@v1
         with:
-            creds: ${{ secrets.SP_ADAMATECH_GITHUB_ACTION_AZURE}}
+          creds: ${{ secrets.SP_ADAMATECH_GITHUB_ACTION_AZURE}}
             
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
