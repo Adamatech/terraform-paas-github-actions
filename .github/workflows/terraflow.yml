@@ -27,6 +27,17 @@ jobs:
       - name: List directory
         run: ls -a
         
+      - name: 'Az CLI login'
+        uses: azure/login@v1
+        with:
+          client-id: ${{ TF_DEPLOY_CLIENT_ID }}
+          tenant-id: ${{ secrets.TF_DEPLOY_TENANT_ID }}
+          subscription-id: ${{ secrets.TF_DEPLOY_SUBSCRIPTION_ID }}
+  
+      - name: 'Run az commands'
+        run: |
+          az account show
+
       - name: Terraform Init
         run: terraform init
 
